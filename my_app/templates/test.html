@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 30%;
+    height: 30%;
+  }
+  </style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+        
+        <h2>JavaScript Functions</h2>
+        <p id='testdemo'></p>
+        <script>
+          myFunction1();
+          function myFunction1(p1, p2) {
+                var carName = 1;
+                document.getElementById("testdemo").innerHTML = typeof carName + " " + carName;
+          }
+        </script>
+      </div>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p> -->
+      <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <script type="text/javascript">
+          function DemoFun()
+          { 
+            x=f1.txtName.value;
+            alert( " " +x + " " + "jahnavi");
+          }
+        </script>
+        <p id="res1"><h2>Any charachter will popup with Jahnavi</h2></p>
+        <form name="f1">
+          Name: <input type="text" name="txtName"/>
+          <input type="submit" value="Click Me" OnClick="DemoFun()" /></br/>
+        </form>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p> -->
+      <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+    <!-- <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div> -->
+  </div>
+</div>
+<center>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <h3>  Column </h3>
+      <!-- <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px"> -->
+        
+          <!-- <a href="#" data-toggle="tooltip" data-placement="top" title={{request.user}}>{{request.user}}</a> -->
+          <h1>{{request.user}}</h1>
+          
+                   <br/> <br/>
+      <!-- </div> -->
+    </center>
+            <!-- {% for i in info %}
+                USERNAME: {{i.username}}<br/>
+                EMAIL: {{i.email}}<br/>
+                FIRSTNAME: {{i.first_name}}<br/>
+                LASTNAME: {{i.last_name}}<br/>
+                ID: {{i.id}}<br/>
+                <br/>
+            {% endfor %} -->
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p> -->
+      <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+  </div>
+</div>
+</center>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <!-- <script type="text/javascript">
+          function Demo()
+          {
+            x=f1.txtName.value;
+            output = " " +x + " " + "jahnavi";
+            document.getElementById("res").innerHTML = output;
+          }
+        </script>
+        
+        <form name="f1">
+          Name: <input type="text" name="txtName"/>
+          <input type="button" value="ClickMe" Onclick="Demo()" ></br/>
+          <p id="res">
+          jahnavi</p>
+        </form> -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>This example calls a function which performs a calculation, and returns the result:</p>
+
+        <p id="test1"></p>
+
+        <script>
+          function myFunction(p1, p2) {
+            return p1 * p2;
+          }
+          document.getElementById("test1").innerHTML = myFunction(4, 3);
+        </script>
+      
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p> -->
+      <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div>
+    <!-- <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div> -->
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <h3> Middle Column </h3>
+      <!-- <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px"> -->
+
+            <a href="#" data-toggle="tooltip" data-placement="top" title={{request.user}}>{{request.user}}</a>
+            <h1>{{request.user}}</h1>
+            <br/><br/>
+            <div>
+                  {% for i in info %}
+                      <img class="rounded-circle" width="30%" height="30%" src= "{{ MEDIA_URL }}/media/{{i.profile_pic}}" >
+                      <br/><br/><br/>
+                      USERNAME: {{i.username}}<br/>
+                      EMAIL: {{i.email}}<br/>
+                      FIRSTNAME: {{i.first_name}}<br/>
+                      LASTNAME: {{i.last_name}}<br/>
+                      ID: {{i.id}}<br/>
+                      <br/>
+                      <button>
+                      <a class="w3-bar-item w3-button w3-right" target="_blank" href="usr_del?id={{i.id}}">DELETE</a>
+                      </button><br/><br/>
+                  
+                  {% endfor %}
+            </div>
+        </center>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <h3> Down Column </h3>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+          
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="rounded-circle" width="50%" height="30%" src= "{{ MEDIA_URL }}/media/Bhargav_anna_20150419_125439.jpg" >
+                        <h1>{{request.user}}</h1>
+                      </div>
+                      <div class="carousel-item">
+                        <img class="rounded-circle" width="50%" height="30%" src= "{{ MEDIA_URL }}/media/Bhargav_anna_20150419_125439.jpg" >
+                        <h1>{{request.user}}</h1>
+                      </div>
+                      <div class="carousel-item">
+                        <img class="rounded-circle" width="50%" height="30%" src= "{{ MEDIA_URL }}/media/Bhargav_anna_20150419_125439.jpg" >
+                        <h1>{{request.user}}</h1>
+                      </div>
+                </div>
+          
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+      </center>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <h3> Carousel Test Column </h3>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+                {% for i in info %}
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  
+                      <div class="carousel-item active">
+                        
+                      <img class="rounded-circle" width="30%" height="30%" src= "{{ MEDIA_URL }}/media/{{i.profile_pic}}" >
+                      
+                     
+                
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+           </div>
+                      
+                </div>
+          {% endfor %}
+      </div>
+    </center>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <h3> Test Column </h3>
+
+  <h2>Basic Progress Bar</h2>
+  <p>To create a default progress bar, add a .progress class to a container element and add the progress-bar class to its child element. Use the CSS width property to set the width of the progress bar:</p>
+  <div class="progress">
+    <div class="progress-bar" style="width:100%"></div>
+  </div>
+</div>
+    </center>
+</div>
+</div>
+<div class="container">
+  <h2>Pagination</h2>
+  <p>To create a basic pagination, add the .pagination class to an ul element. Then add the .page-item to each li element and a .page-link class to each link inside li:</p>                  
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</div>
+
+<p><h1>TEST</h1></p>
+</body>
+</html>

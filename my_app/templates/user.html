@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style> 
+		#myDIV {
+		  width: 1500px;
+		  height: 650px;
+		  border: 15px solid coral;
+		  animation: mymove 5s infinite;
+		}
+		h1 {
+		  border-style: solid;
+		  border="1"
+		  border-color: "#ff0000";
+		  padding:10;
+		}
+		div {
+		  border-style: solid;
+		  border="1"
+		  border-color: "#ff0000";
+		  padding:10;
+		}
+
+		@keyframes mymove {
+		  50% {border-color: lightblue;}
+		}
+	</style>
+	<!-- <style>
+		h1 {
+		  border-style: solid;
+		  border="1"
+		  border-color: "#ff0000";
+		  padding:10;
+		}
+
+		div {
+		  border-style: solid;
+		  border="1"
+		  border-color: "#ff0000";
+		  padding:10;
+		}
+	</style> -->
+	<title>User details</title>
+</head>
+
+
+
+
+
+<body>
+<!-- <div id="myDIV"> -->
+<table><td>	
+
+	<div style="overflow:auto;">
+		<td>
+			<div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+				
+				<h2>JavaScript Functions</h2>
+				<p id='testdemo'></p>
+				<script>
+					myFunction1();
+					function myFunction1(p1, p2) {
+								var carName = 1;
+								document.getElementById("testdemo").innerHTML = typeof carName + " " + carName;
+					}
+				</script>
+			</div>
+			<!-- </td>
+			<td> -->
+			<a class="w3-bar-item w3-button w3-right" target="_blank" href="/my_app/test_ing">REGISTER</a>
+			<!-- </td><td> -->
+			<div>
+				<td>
+				<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+				<p id="test1"></p>
+
+				<script>
+					function myFunction(p1, p2) {
+					  return p1 * p2;
+					}
+					document.getElementById("test1").innerHTML = myFunction(4, 3);
+				</script>
+				</td>
+			</div>
+		</td>
+		<td>
+		
+			<div>
+				<td>
+				<center>
+					<h1>{{request.user}}</h1>
+					<br/><br/>
+
+					{% for i in info %}
+					 
+							USERNAME: {{i.username}}<br/>
+							EMAIL: {{i.email}}<br/>
+							FIRSTNAME: {{i.first_name}}<br/>
+							LASTNAME: {{i.last_name}}<br/>
+							ID: {{i.id}}<br/>
+							
+							<br/>
+					{% endfor %}
+
+					<br/> <br/>
+				</center></td>
+			</div>
+		</td>			
+
+			<!-- 
+				
+				<script>
+					// document.write(5 + 6);
+					// window.alert(5 + 5);
+				</script>
+				<script>
+			console.log(5 + 6);
+			</script>
+				<br/> <br/>
+				<button type="button"
+				onclick="document.getElementById('demo2').innerHTML = TEXT">
+				Click me to display Date and Time.</button>
+				<p id='demo2'>
+					text
+				</p>
+
+				<br/> <br/>
+
+				<h2>What Can JavaScript Do?</h2>
+
+				<p id="demo1">JavaScript can change the style of an HTML element.</p>
+
+				<p id='demo1'>
+					{% for i in info %}
+						USERNAME: {{i.username}}<br/>
+						EMAIL: {{i.email}}<br/>
+						FIRSTNAME: {{i.first_name}}<br/>
+						LASTNAME: {{i.last_name}}<br/>
+						ID: {{i.id}}<br/>
+						<br/>
+				{% endfor %}
+				</p>
+
+				<button type="button" onclick="document.getElementById('demo1').style.fontSize='35px'">Click Me!</button> -->
+			
+
+			<!-- <div>
+				<h2>JavaScript For Loop</h2>
+
+				<p id="test"></p>
+
+				<script>
+				var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+				var text = "";
+				var i;
+				for (i = 0; i < cars.length; i++) {
+				  text += cars[i] + "<br>";
+				}
+				document.getElementById("test").innerHTML = text;
+				</script>
+			</div> -->
+			<!-- </td></div> -->
+		<td>	
+			<div>
+			<td>	
+				<script type="text/javascript">
+					function Demo()
+					{
+						x=f1.txtName.value;
+						output = " " +x + " " + "jahnavi";
+						document.getElementById("res").innerHTML = output;
+					}
+				</script>
+				
+				<form name="f1">
+					Name: <input type="text" name="txtName"/>
+					<input type="button" value="ClickMe" Onclick="Demo()" ></br/>
+					<p id="res">
+					jahnavi</p>
+				</form>
+			</td>
+			</div>
+			
+			<div>
+			<td>
+				<script type="text/javascript">
+					function DemoFun()
+					{	
+						x=f1.txtName.value;
+						alert( " " +x + " " + "jahnavi");
+					}
+				</script>
+				<p id="res"><h2>Any charachter will popup with Jahnavi</h2></p>
+				<form name="f1">
+					Name: <input type="text" name="txtName"/>
+					<input type="submit" value="Click Me" OnClick="DemoFun()" /></br/>
+				</form> 
+			</td>
+			</div>
+		</td>
+	</div>
+
+</td></table>
+<!-- </div> -->
+</body>
+</html>

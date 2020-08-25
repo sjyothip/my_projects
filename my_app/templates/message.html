@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CHAT</title>
+</head>
+<body>
+  <form class="user" value="{{request.GET}}" enctype="multipart/form-data" method='post' action=/my_app/usr_pst_msgs>
+    <div class="form-group row">
+      <left><h1>PROFILE: {{request.user}}</h1></left>
+      <div class="col-sm-6 mb-3 mb-sm-0">
+          {% for i in info %}
+            <h2><label for="user">Chat: {{i.username}}</label><br></h2>
+            <div class="col-md-9" id="profile" style="display: none;">
+              <input type="text" id="to_user" name="to_user" value="{{i.id}}" ><br>
+            </div>
+          {% endfor %}
+          <br/>
+          <h3><label for="message">Messages</label><br/></h3>
+          <!-- <button type='button' value='{{j.user__id}}'> {{j.user__id}} </button> -->
+          <div class="container">
+            <div class="card">
+              <div class="card-body">
+                {% for j in info1 %}
+                <br/>
+                  <h4>Sender:{{j.sender_id}}</h4>
+                  {{j.msgs}}
+                  <h4>Receiver:{{j.user__username}}</h4>
+                <br/>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          	<input type="text" class="form-control form-control-user" id="message" name="message" placeholder="Enter Text" required>
+      	</div>
+    </div>
+    <div class="form-group row">
+      <input type="file" id="file" name="file">
+    </div>
+    <button type='submit' value='submit'> ENTER </button>
+  </form>
+            <!-- <div class="container">
+              <div class="card">
+                <div class="card-body">
+                  {% for j in info1 %}
+                  <dialog width="100" height="50" open>
+                  {{j.sender_id}}<br/><br/>
+                  {{j.msgs}}<br/><br/>
+                  </dialog>
+                {% endfor %}
+                </div>
+              </div>
+            </div> -->
+<div class='container'>
+	<p>
+		<a href="chats" class="btn btn-info btn-lg">
+			<span class="glyphicon glyphicon-plus-sign"></span>CHATS
+		</a>
+	</p>
+</div>
+</body>
+</html>
+<!-- <button type='button' id='to_user' name="to_user" value='{{j.user__id}}'><h2> {{j.user__username}} </h2></button> <br/> -->
+
+	<!-- <h1> <span class="badge badge-secondary" id='to_user' name="to_user" value='{{j.user__id}}'> {{j.user__username}}</span></h1> -->
+
+<!-- <label for="to_user">{{j.user__username}}</label><br> -->
+                    		<!-- <input type="text" id="to_user" name="to_user" text="{{j.user__id}}" placeholder="{{j.user__username}}" readonly><br> -->
+
+
+              <!-- <textarea id="message" name="message" rows="25" cols="50">
+                {% for j in info1 %}
+                <dialog width="100" height="50" open>
+                  {{j.sender_id}}<br/><br/>
+                  {{j.msgs}}<br/><br/>
+                  </dialog>
+                  
+                  
+                {% endfor %}
+              </textarea>

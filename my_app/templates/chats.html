@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>ALL CHATS</title>
+</head>
+<body>
+	<left><h1>USERNAME: {{request.user}}</h1></left>
+<div class='container'>
+	{% for j in info %}
+	<h2>
+		<a class="w3-bar-item w3-button w3-right" target="_blank" href="usr_chat?user_id={{j.user__id}}">{{j.user__username}}<br/>{{j.sender_id}}</a>
+	</h2>
+		<br/>
+		<a class="w3-bar-item w3-button w3-right" target="_blank" href="chat_del?chat_id={{j.user__id}}">DELETE</a><br/>
+	{% endfor %}
+</div>
+<br/><br/><br/>
+<div class='container'>
+	<p>Add New chat:
+		<a href="usr_get_msgs" class="btn btn-info btn-lg">
+			<span class="glyphicon glyphicon-plus-sign"></span>ADD
+		</a>
+	</p>
+</div>
+<br/>
+<div class='container'>
+	<p>Main page:
+		<a href="main" class="btn btn-info btn-lg">
+			<span class="glyphicon glyphicon-plus-sign"></span>Back
+		</a>
+	</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+<!-- {% load static %} -->
+
+<!-- {% block content %} -->
+<!-- {% endblock content %} -->

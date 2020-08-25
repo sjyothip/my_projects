@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ALL CHATS</title>
+</head>
+<body>
+	<left><h1>USERNAME: {{request.user}}</h1></left>
+<!-- <div class='container'>
+	{% for j in info %}
+		<a class="w3-bar-item w3-button w3-right" target="_blank" href="usr_chat?user_id={{j.user__id}}">{{j.user__username}}</a>
+			<br/>
+	{% endfor %}
+</div> -->
+<div class='container'>
+	{% for j in info1 %}
+    	<a class="w3-bar-item w3-button w3-right" target="_blank" href="usr_chat?user_id={{j.id}}">
+    	<img class="rounded-circle" width="10%" height="10%" src= "{{ MEDIA_URL }}/media/{{j.profile_pic}}" >
+    	<button type='button' value='{{j.id}}'><h2> {{j.username}} </h2></button> <br/><br/><br/><br/>
+    	</a>
+	{% endfor %}
+</div>
+	
+</body>
+</html>
