@@ -39,11 +39,11 @@ urlpatterns = [
 
 	path('test_test',views.test_test,name='test_test'),
 
-	# path('testhtml',views.testhtml,name='testhtml'),
+	path('send_email_trial',views.send_email_trial,name='send_email_trial'),
 
-	# path('testhtml',views.testhtml,name='testhtml'),
+	path('weather',views.weather,name='weather'),
 
-	# path('testhtml',views.testhtml,name='testhtml'),
+	path('weather_index',views.weather_index,name='weather_index'),
 
 	# path('testhtml',views.testhtml,name='testhtml'),
 

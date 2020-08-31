@@ -382,3 +382,63 @@ def test_test(request):
 		print(data,"data")
             
 	return JsonResponse({'success':True,'data':data})
+
+
+from my_projects import settings
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
+@csrf_exempt
+def send_email_trial(request):
+    # subject = request.POST.get('subject', '')
+    # message = request.POST.get('message', '')
+    # from_email = request.POST.get('from_email', '')
+    subject="hi"
+    message="test msge"
+    # from_email="vamsitha12@gmail.com"
+    if subject and message:
+        try:
+            send_mail(subject, message, settings.EMAIL_HOST_USER, ['vamsitha12@gmail.com'],fail_silently=False)
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return HttpResponse('Thanks, Email Sent successfully.')
+    else:
+        # In reality we'd use a form class
+        # to get proper validation errors.
+        return HttpResponse('Make sure all fields are entered and valid.')
+
+
+
+@csrf_exempt
+def weather(request):
+	return render(request, 'weather.html')
+
+	# if request.method == 'POST':
+		# city=request.POST.get('city')
+		# url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f8a5d735b096ea2ac24b60c551dca284'
+	 #    # city = 'Hyderabad'
+		# city_weather = requests.get(url.format(city)).json()
+		# # weather = {
+		#        'city' : city,
+		#        'temperature' : city_weather['main']['temp'],
+		#        'description' : city_weather['weather'][0]['description'],
+		#        'icon' : city_weather['weather'][0]['icon']
+		#    }
+		 #returns the index.html template
+
+
+import requests
+@csrf_exempt
+def weather_index(request):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f8a5d735b096ea2ac24b60c551dca284'
+    # city = 'Hyderabad'
+    city=request.POST.get('city')
+    city_weather = requests.get(url.format(city)).json() #request the API data and convert the JSON to Python data types
+    # print("test",city_weather)
+
+    # weather = {
+    #     'city' : city,
+    #     'temperature' : city_weather['main']['temp'],
+    #     'description' : city_weather['weather'][0]['description'],
+    #     'icon' : city_weather['weather'][0]['icon']
+    # }
+    return render(request, 'weather.html',{'info':city_weather}) #returns the index.html template
